@@ -25,6 +25,7 @@ class AuthController extends Controller
 
 	// add
     protected $redirectTo = '/';
+    protected $loginPath = '/login';
 
     /**
      * Create a new authentication controller instance.
