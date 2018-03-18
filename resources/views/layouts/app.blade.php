@@ -14,7 +14,7 @@
         	<!-- Bootstrap JavaScript-->
         	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-			<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+			<link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
 	</head>
 	<body>
 		@include('commons.navbar')
