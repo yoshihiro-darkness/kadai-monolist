@@ -24,4 +24,7 @@ Route::get('logout', 'Auth\AuthController@getLogout')->name('logout.get');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('items', 'ItemsController', ['only' => ['create']]);
+	Route::post('want', 'ItemsController@want')->name('item_user.want');
+	Route::delete('want', 'ItemsController@dont_want')->name('item_user.dont_want');
+	Route::resource('users', 'UsersController', ['only' => ['show']]);
 });	
