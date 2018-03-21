@@ -67,9 +67,12 @@ class User extends Model implements AuthenticatableContract,
 		//既にWantしているかの確認
 		$exist = $this->is_wanting($itemId);
 
+		//dd(\Auth::user()->id);
+		//dd($itemId);
+	
 		if ($exist) {
 			// 既にWantしていればWantを外す
-			\DB::delete("DELETE FROM item_user WHERE user_id = ? AND item_id ? AND type = 'want'", [\Auth::user()->id, $itemId]);
+			\DB::delete("DELETE FROM item_user WHERE user_id = ? AND item_id = ? AND type = 'want' ;", [\Auth::user()->id, $itemId]);
 		} else {
 			// 未Wantであれば何もしない
 			return false;
@@ -113,7 +116,7 @@ class User extends Model implements AuthenticatableContract,
 
 		if ($exist) {
 			// 既にhaveしていればHaveを外す
-			\DB::delete("DELETE FROM item_user WHERE user_id = ? AND item_id ? AND type = 'have'", [\Auth::user()->id, $itemId]);
+			\DB::delete("DELETE FROM item_user WHERE user_id = ? AND item_id = ? AND type = 'have'", [\Auth::user()->id, $itemId]);
 		} else {
 			// 未Haveであれば何もしない
 			return false;
